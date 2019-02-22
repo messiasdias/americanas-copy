@@ -1,0 +1,425 @@
+
+/*Start layout custom */
+
+html {
+	
+	 scroll-behavior: smooth ;
+	 transition:  all 1s;
+	 transition-delay: .5s;
+	 animation-timing-function:ease-in-out;
+
+
+	  /* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $preto2; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $cor1; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $cor1; 
+}
+
+
+}
+
+
+
+/* The animation code */
+@keyframes down {
+  from {transform: translateY(-100%)}
+  to {transform: translateY(100%)}
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	position: absolute;
+	font-family:  'Roboto', Helvetica, sans-serif;
+	min-width: 300px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.overlay{
+	content: '';
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: $preto2;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	transition: all .3s ease-in-out;
+	display: none;
+	z-index: 5;
+}
+
+.destac-content{
+	position: relative;
+	z-index: 10;
+	box-shadow: -1px 1px 1px $preto2;
+}
+
+.flex-center{
+	@extend .flex, .flex-items-center,.flex-justify-center;
+}
+
+.flex-left{
+	@extend  .flex-center;
+	align-items: center !important;
+	justify-content: flex-start !important;
+}
+
+.flex-right{
+	@extend  .flex-center;
+	align-items: center !important;
+	justify-content: flex-end !important;
+}
+
+.col, .row{
+	margin: 0 !important;
+	padding: 0!important;
+}
+
+
+.default {
+	background-color: $cor1 !important;
+	color:  $branco;
+}
+
+.default-rev {
+	background-color: $branco !important;
+	color:  $cor1 !important;
+}
+
+.search-group{
+	@extend .flex-row, .flex-center;
+	background-color: $branco !important;
+	color:  $cor1;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	min-width: 100%;
+
+	input{
+		@extend .flex-self-str;
+		border:solid 2px green; 
+		border: none !important;
+		color:#666;
+		font-size: 100px;
+		min-height: 100%;
+		margin: auto  0px !important;
+		z-index: 4;
+
+		&:focus {
+			box-shadow: none !important;
+			outline: 0 !important;
+		}
+
+		&::placeholder{
+			color:  #666;
+			//text-align: center !important;
+			@media screen and (max-width: $l ) {
+				font-size: 45px;
+			}
+			@media screen and (min-width: $l+1 ) {
+				font-size: 1em;
+			}
+		}
+
+
+	}
+
+
+
+	button{
+		@extend .flex-self-str;
+		height: 100;
+		width: 3em;
+		padding: 10px;
+		cursor: pointer !important;
+		border-color: $branco;
+		border-style: solid;
+		box-shadow: none !important;
+		min-height: 100% !important;
+
+
+		@media screen and (max-width: $l ) {
+			background-color: $cor1 !important;
+			color: $branco;
+			font-size: 3em;
+		}
+
+		@media screen and (min-width: $l+1 ) {
+			background-color: $branco !important;
+			color: $cor1;
+			font-size: 1.8em;
+		}
+
+		&:hover{
+			opacity: 0.8;
+			background-color: $preto2;
+		}
+	}
+
+
+}
+
+.logo{
+	user-select:none;
+
+	@media screen and(max-width: $l){
+		height: 70px;
+		min-width: 100%;
+		margin-left: 25px;
+	}
+	@media screen and(min-width: $l+1){
+		min-height: 100%;
+		width: 100%;
+	}
+}
+
+.icon-group{
+		@extend .flex-row;
+		float: right !important;
+
+		& > p{
+			margin: 10px;
+			text-align: justify;
+		}	
+	}
+
+.user-icon, .cart-icon, .menu-icon {
+		margin: 5px;
+		cursor: pointer;
+		user-select:none;
+
+
+
+
+	 @media screen and (max-width:$l){
+	 	font-size: 5em;
+	 }
+
+	 @media screen and (min-width:$l){
+	 	font-size: 2em;
+	 }
+	}
+
+.user-icon{
+		padding: 10px;
+		border-radius: 50%;
+
+		@media screen and (max-width:$l){
+		 	font-size: 7em;
+		 	//height: 90px;
+			//width: 90px;
+			padding: 20px;
+			margin: 20px;
+			border: solid 5px $branco;
+	 	}
+
+		 @media screen and (min-width:$l+1){
+	 		font-size: 3em;
+	 		padding: 10px;
+	 		border: solid 2px $branco;
+	 	}
+	}
+
+.cart-icon{
+		background-color: rgba(255,255,255,.1);
+	}
+
+.menu-icon{
+
+
+}
+
+.expand{
+	padding: 3px;
+	font-weight: bold;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.header-login{
+	
+	position: absolute;
+	max-width: 300px;
+	min-height: 100px;
+	z-index: 2;
+	background-color: $branco;
+	box-shadow: 12px , 12px 60px $preto !important;
+	padding: 5px;
+	display: none;
+
+	& > .content {
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		margin: 5px;
+	}
+
+	& > .a , & > .b {
+		padding: 5px !important;
+		margin: 10px !important;
+		border-bottom: solid 1px #666;
+	}
+
+	&:before {
+	   position: absolute;
+	  border: 20px solid transparent;
+	  border-right-color: #FFFFFF;
+	  content: "";
+	  top: -30px;
+	  transform: rotate(90deg);
+	}
+
+
+}
+
+.btn-custom{
+	@extend .flex-self-str;
+	background-color: $cor1;
+	color: $branco;
+	padding: 2em;
+	margin: 5px;
+	font-weight: bold;
+	box-sizing: border-box;
+	border-bottom: solid 2px $preto2;
+	border-radius: 2px;
+}
+
+.banner{
+	@extend .default-rev, .flex-center;
+	background-image: url('/assets/img/top.png') !important;
+	background-size: 20% 10%;
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	font-weight: bold;
+	font-size: 2em;
+	min-width: 100%;
+	border-bottom: solid 2px $branco;
+	opacity: .7;
+	user-select:none;
+	
+	& > p{
+		padding: 5px;
+		background-color: $branco;
+		width:auto;
+		text-shadow: 1px 1px 5px #ccc;
+		margin: 0px auto;
+		opacity: 10;
+
+		& > .destac{
+			line-height: 2px;
+			border-top: solid 3px $cor1;
+			border-bottom: solid 3px $cor1;
+			border-left: none !important;
+			border-right: none !important; 
+		}
+	}
+}
+
+
+
+.header{
+	@extend .default;
+	min-width: 100%;
+	height: auto;
+	padding: 2% !important;
+	user-select:none;
+}
+
+.menu1 {
+	position: absolute;
+	background-color: $branco;
+	width: 100% !important;
+	height: auto;
+	padding: 10px !important;
+	margin: 0;
+	border-bottom: solid 2px  rgba(102,102,102,.1) !important;
+
+	.destac{
+		font-weight: bold;
+		color: $cor2;
+	}
+
+	.destac1{
+		color: $cor1 !important;
+		&:hover{
+			background-color: transparent;
+		}
+	}
+
+	.destac2{
+		&:hover{
+			background-color: #FFFF00 !important ;
+		}
+	}
+
+	.destac3{
+		color: $cor1 !important;
+		border-top: solid 2px $cor1;
+		border-bottom: solid 2px $cor1;
+		font-size: 1.111em;
+	}
+
+	ul{
+		list-style: none;
+		overflow-x: none;
+		overflow-y: hidden;
+		white-space: nowrap;
+		-webkit-scrollbar-width: none;
+		
+
+		li{
+			display: inline !important;
+			//float: left;
+			white-space: nowrap;
+			margin: 5px;
+
+			a{
+				text-transform: lowercase;	
+				color: $cor2;
+				padding: 15px;
+				transition: background .4s ease-in-out;
+
+				&:hover{
+					transition: background .4s ease-in-out;
+					background-color: rgba(102,102,102,.1);
+				}
+
+				&:before{
+					content: "";
+					position: absolute;
+					width: 100% inherit;
+					height: 100% inherit;
+					background-color: #666;
+
+				}
+			}
+		}
+	}
+}	
+
+
+
+
+/*End layout custom */
+

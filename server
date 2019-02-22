@@ -1,0 +1,139 @@
+#!/bin/bash
+
+corPadrao="\033[0m"
+preto="\033[0;30m"
+vermelho="\033[0;31m"
+verde="\033[0;32m"
+amarelo="\033[0;33m"
+azul="\033[0;36m"
+purple="\033[0;35m"
+
+#Arquivo
+arquivo="/tmp/teste.tmp"
+host="0.0.0.0"
+port="80"
+
+clear
+echo -e "$azul ###################################"
+echo " ####                           ####"
+echo " ####   PHP/Sass - DevServer   ####"
+echo " ####                           ####"
+echo " ###################################"	
+
+case $1 in
+
+#### If start ####
+start)
+
+	if [ -e $arquivo ]; then
+
+		echo -e "$azul O Serviço Já foi Iniciado!"
+		echo ""
+		sleep 2
+		./server "status"	
+
+	else	
+
+		php -S $host:$port | echo "Servidor PHP" $! >> $arquivo &
+
+		sass --watch assets/css/scss/main.scss:assets/css/style.css | echo Compilador Sass $! >> $arquivo &
+
+		while read linha; do
+			name=$(echo $linha | awk '{print $1" "$2}')
+			id=$(echo $linha | awk '{print $3}')
+
+			echo -e "$verde -> Iniciando $name ... | PID: $id"
+		done < $arquivo
+
+	fi
+	
+;;
+
+
+#### if stop ####
+stop) 
+	
+	if [ -e $arquivo ]; then
+
+		while read linha; do
+		  name=$(echo $linha | awk '{print $1" "$2}')
+		  id=$(echo $linha | awk '{print $3}')
+		  
+		  if kill $id  
+		  then 
+		 	 echo -e "$vermelho -> Parando $name... | PID: $id"
+		  else
+		  	 echo -e "$vermelho -> Erro ao tentar Finalizar $name... | PID: $id"
+		  	 echo -e "$vermelho O Processo referido pode não está em execução, ou até mesmo não existe."
+		  fi
+
+		done < $arquivo
+
+		rm $arquivo
+
+
+	else
+		echo -e "$amarelo -> Nenhum dos Serviço foi Iniciado!"
+	fi			
+
+;;
+
+
+
+#### if Reload  ####
+reload) 
+	
+	if [ -e $arquivo ]; then
+		./server "stop"
+		sleep 2
+		./server "start"
+	else
+		echo -e "$amarelo -> Nenhum dos Serviço foi Iniciado!"
+		echo -e "$azul Iniciar Agora? (s/n)"
+		read resposta
+		
+		if [ $resposta == s ]; then
+			./server "start"	
+		else
+			exit	
+		fi 	
+	fi
+
+;;
+
+
+
+#### if status ####
+status)
+	
+	if [ -e $arquivo ]; then
+		 
+		 echo -e "$amarelo Serviço | PID | Status"  
+		 echo ""
+
+		while read linha; do
+
+		  name=$(echo $linha | awk '{print $1" "$2}')
+		  id=$(echo $linha | awk '{print $3}')
+		  echo -e "$verde $name | $id | Em Execução" 
+		  ps | grep $id 
+
+ 		done < $arquivo
+
+ 	else	
+ 		echo -e "$amarelo -> Nenhum Serviço foi Iniciado!"
+	fi
+;;
+
+*)
+	if [ $1 != "" ]; then
+		echo -e "$amarelo -> Nenhum Comando foi Identificado!"
+	fi
+	
+	echo -e "$azul Comandos: start, stop, reload, status"
+	echo -e "$azul Exemplo: ./server <comando>"
+	echo -e " \n "
+	
+;;
+
+esac	

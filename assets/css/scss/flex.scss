@@ -1,0 +1,137 @@
+
+/*Start Display Flex */
+
+$directions: (
+ col:column,
+ row:row,
+ colr:column-reverse,
+ rowr:row-reverse
+ );
+
+ $justifys: (
+  center:center,
+  aro:space-around,
+  bet:space-between, 
+  start:flex-start,
+  end:flex-end,
+  ini:initial,
+  inh:inherit
+ );
+
+ $contents: (
+  str:stretch,
+  center:center,
+  aro:space-around,
+  bet:space-between, 
+  start:flex-start,
+  end:flex-end,
+  ini:initial,
+  inh:inherit
+ );
+
+  $selfs: (
+  auto:auto,
+  base:baseline,
+  str:stretch,
+  center:center,
+  start:flex-start,
+  end:flex-end,
+  ini:initial,
+  inh:inherit
+ );
+
+  $itemss: (
+  base:baseline,
+  str:stretch,
+  center:center,
+  aro:space-around,
+  bet:space-between, 
+  start:flex-start,
+  end:flex-end,
+  ini:initial,
+  inh:inherit
+ );
+
+ $wraps:(
+  nowrap:nowrap,
+  wrap:wrap,
+  wrapr:wrap-reverse
+  );
+
+.flex {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+    @each $key, $val in $directions {
+        &-#{$key} {
+           @extend .flex;
+          flex-direction: $val !important;
+        }
+
+         @each $key2, $val2 in $bpoints {
+            $max: ''; 
+
+            @if $key == 'xs' {
+             $max: 'max';
+            }
+            @else{
+                $max: 'min';  
+              }
+            
+            &-#{$key2}-#{$key} {
+                  @media screen and ( $max+'-width':$val2 ){
+                      flex-direction: $val !important;
+                  }
+            }
+
+        }
+
+
+    }
+
+
+     @each $key, $val in $justifys {
+        &-justify-#{$key} {
+          justify-content: $val !important;
+        }
+     }
+
+      @each $key, $val in $itemss {
+        &-items-#{$key} {
+          align-items: $val !important;
+        }
+     }
+
+     @each $key, $val in $contents {
+        &-content-#{$key} {
+          align-content: $val;
+        }
+     }
+
+     @each $key, $val in $selfs {
+        &-self-#{$key} {
+          align-self: $val !important;
+        }
+     }
+
+     @each $key, $val in $wraps {
+
+      @each $key2, $val2 in $bpoints {
+         @extend .flex;
+          &-#{$key2}-#{$key} {
+             @media screen and (min-width:$val2 ){
+              flex-wrap: $val !important;
+             }
+          }
+      }
+
+     }
+
+   
+            
+
+  }
+
+
+/*End Display Flex */

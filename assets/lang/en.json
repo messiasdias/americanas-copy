@@ -1,0 +1,33 @@
+{
+"menu-home":"Home",
+"menu-about":"About",
+"menu-skills":"Skills",
+"menu-jobs":"Jobs",
+"menu-contact":"Contact",
+
+"home-loading": "Loading...",
+"home-h1":"Hello, I'm<br><b>Messias Dias</b><br>Here is some of my work...",
+
+"about-love-pizza":"I love Pizza with Coke!",
+"about-title":"About Me",
+"about-description":"Passionate about technology, Works with IT since 2011, Support Analyst Jr in 2018, Self-taught Developer in Development since 2014 with HTML, JS, CSS, PHP and Java, as well as frameworks, libs and engines like: Bootstrap, Laravel, Slim, CakePHP, Jquery, Twig, Wordpress, Sass. Technical Training in Computer Science for the Internet - IFPE (2015-2016), Computer Network Technology - Interrupted (2014-2015)",
+
+"skill-title1":"Font-End",
+"skill-description1": "Languages and Frameworks",
+"skill-title2":"Back-End",
+"skill-description2": "Languages, Frameworks, CMS and engines",
+
+"jobs-title": "Jobs <br>Galery",
+"jobs-description":"Hall Of Fame",
+
+"contact-title":"Lets talk ?!",
+"contact-description":"Feel free to send us your comments or suggestions about our work, or follow us on some social network and learn more. we would be very happy with your feedback. It will be a pleasure talking to you!",
+
+"form": {
+	"name":"Your Name",
+	"email":"Your Email",
+	"msg":"Your Message here!",
+	"send":"Send"
+}
+
+}

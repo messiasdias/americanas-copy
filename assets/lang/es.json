@@ -1,0 +1,33 @@
+{
+"menu-home":"Inicio",
+"menu-about":"Acerca",
+"menu-skills":"Habilidades",
+"menu-jobs":"Trabajos",
+"menu-contact":"Contacto",
+
+"home-loading": "Cargando...",
+"home-h1":"¡Hola!, Yo soy <br><b>Messias Dias</b> <br>Este es mi trabajo...",
+
+"about-love-pizza":"¡Me encanta la pizza con coca cola!",
+"about-title":"Acerca de min",
+"about-description":"Apasionado por la tecnología, trabaja con TI desde 2011, Support Analyst Jr en 2018, desarrollador autodidacta en desarrollo desde 2014 con HTML, JS, CSS, PHP y Java, así como marcos de trabajo, librerías y motores como: Bootstrap, Laravel, Slim , CakePHP, Jquery, Twig, Wordpress, Sass. Capacitación técnica en informática para Internet - IFPE (2015-2016), tecnología de redes informáticas - interrumpida (2014-2015)",
+
+"skill-title1":"Font-End",
+"skill-description1": "Lenguajes y frameworks",
+"skill-title2":"Back-End",
+"skill-description2": "Lenguajes, frameworks, CMS y motores.",
+
+"jobs-title": "Galerya <br>de Trabajos",
+"jobs-description":"Hall de la Fama",
+
+"contact-title":"¡¿Vamos a hablar?!",
+"contact-description":"Mantente a la voluntad para enviar tus comentarios o sugerencias sobre nuestro trabajo, o seguir en alguna red social y conocer más. nos quedamos muy contentos con sus comentarios. ¡será un placer hablar con usted!",
+
+"form": {
+	"name":"Su Nombre",
+	"email":"Your E-mail",
+	"msg":"!Su Mensaje Aquí!",
+	"send":"Enviar"
+}
+
+}
