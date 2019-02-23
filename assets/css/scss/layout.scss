@@ -4,29 +4,27 @@
 html {
 	
 	 scroll-behavior: smooth ;
-	 transition:  all 1s;
-	 transition-delay: .5s;
-	 animation-timing-function:ease-in-out;
+	 //transition:  all .1s ease-in-out;
 
 
 	  /* width */
 ::-webkit-scrollbar {
-  width: 2px;
+  //width: 2px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $preto2; 
+  //background: $preto2; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $cor1; 
+  //background: $cor1; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $cor1; 
+  //background: $cor1; 
 }
 
 
@@ -111,19 +109,15 @@ body{
 	@extend .flex-row, .flex-center;
 	background-color: $branco !important;
 	color:  $cor1;
-	margin: 0;
-	padding: 0;
-	min-height: 100%;
-	min-width: 100%;
+	margin: auto 20px;
 
 	input{
-		@extend .flex-self-str;
-		border:solid 2px green; 
+		@extend .flex-self-str;	
 		border: none !important;
 		color:#666;
 		font-size: 100px;
-		min-height: 100%;
-		margin: auto  0px !important;
+		margin: auto  2px !important;
+		padding: 10px;
 		z-index: 4;
 
 		&:focus {
@@ -133,7 +127,6 @@ body{
 
 		&::placeholder{
 			color:  #666;
-			//text-align: center !important;
 			@media screen and (max-width: $l ) {
 				font-size: 45px;
 			}
@@ -181,16 +174,18 @@ body{
 }
 
 .logo{
+	@extend .flex-self-end;
 	user-select:none;
 
+
 	@media screen and(max-width: $l){
-		height: 70px;
-		min-width: 100%;
-		margin-left: 25px;
+		//height: 70px;
+		//min-width: 100%;
+		//margin-left: 25px;
 	}
 	@media screen and(min-width: $l+1){
-		min-height: 100%;
-		width: 100%;
+		//min-height: 100%;
+		//width: 100%;
 	}
 }
 
@@ -199,8 +194,9 @@ body{
 		float: right !important;
 
 		& > p{
-			margin: 10px;
-			text-align: justify;
+			margin: 20px;
+			max-width: 100px;
+			text-align: left;
 		}	
 	}
 
@@ -250,10 +246,9 @@ body{
 
 }
 
-.expand{
+.expand, .fa-chevron-down{
 	padding: 3px;
 	font-weight: bold;
-	font-size: 2em;
 	cursor: pointer;
 }
 
@@ -339,21 +334,42 @@ body{
 
 
 .header{
-	@extend .default;
+
+	//@extend .default;
 	min-width: 100%;
 	height: auto;
-	padding: 2% !important;
+	padding: 15px !important;
 	user-select:none;
 }
 
 .menu1 {
-	position: absolute;
 	background-color: $branco;
 	width: 100% !important;
 	height: auto;
-	padding: 10px !important;
 	margin: 0;
 	border-bottom: solid 2px  rgba(102,102,102,.1) !important;
+
+		::-webkit-scrollbar {
+		  z-index: -1;
+		  width: none;
+		  background-color: transparent;
+		  display: none;
+		}
+
+		&::-webkit-scrollbar-track {
+			//background-color: transparent;
+			display: none;
+		}
+		 
+		&::-webkit-scrollbar-thumb {
+		  display: none;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+		  display: none;
+		}
+
+
 
 	.destac{
 		font-weight: bold;
@@ -375,30 +391,45 @@ body{
 
 	.destac3{
 		color: $cor1 !important;
-		border-top: solid 2px $cor1;
-		border-bottom: solid 2px $cor1;
-		font-size: 1.111em;
+		border-top: solid 2.5px $cor1;
+		border-bottom: solid 2.5px $cor1;
+		line-height: .1em !important;
 	}
 
 	ul{
+		height: 100%;
+		padding: 14px !important;
+		margin: 0 auto;
 		list-style: none;
 		overflow-x: none;
 		overflow-y: hidden;
 		white-space: nowrap;
-		-webkit-scrollbar-width: none;
+		user-select:none;
+		text-align: center;
 		
 
 		li{
+
+			z-index: 2;
 			display: inline !important;
-			//float: left;
 			white-space: nowrap;
-			margin: 5px;
+			//margin: 10px 10px ;
+			height: 100%;
+
 
 			a{
 				text-transform: lowercase;	
 				color: $cor2;
-				padding: 15px;
+				padding: 20px;
 				transition: background .4s ease-in-out;
+
+				@media screen and (max-width: $l){
+					font-size: 39px;
+				}
+
+				@media screen and (min-width: $l+1){
+					font-size: 1em;
+				}
 
 				&:hover{
 					transition: background .4s ease-in-out;
@@ -407,11 +438,10 @@ body{
 
 				&:before{
 					content: "";
-					position: absolute;
-					width: 100% inherit;
-					height: 100% inherit;
+					//position: absolute;
+					width: 10% ;
+					height: 10%;
 					background-color: #666;
-
 				}
 			}
 		}
