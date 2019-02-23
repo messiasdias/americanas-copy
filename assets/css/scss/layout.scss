@@ -90,8 +90,15 @@ body{
 }
 
 .col, .row{
+	position: relative;
 	margin: 0 !important;
 	padding: 0!important;
+	min-height: 100% inherit;
+	min-width: 100% inherit;
+}
+
+.row{
+	//border: solid 1px blue !important;
 }
 
 
@@ -106,10 +113,11 @@ body{
 }
 
 .search-group{
+
 	@extend .flex-row, .flex-center;
 	background-color: $branco !important;
 	color:  $cor1;
-	margin: auto 20px;
+
 
 	input{
 		@extend .flex-self-str;	
@@ -141,10 +149,10 @@ body{
 
 
 	button{
-		@extend .flex-self-str;
+		//@extend .flex-self-str;
 		height: 100;
-		width: 3em;
-		padding: 10px;
+		width: 2em;
+		padding: 7px;
 		cursor: pointer !important;
 		border-color: $branco;
 		border-style: solid;
@@ -173,29 +181,28 @@ body{
 
 }
 
-.logo{
-	@extend .flex-self-end;
-	user-select:none;
 
+.logo-content{
+	
+	//@extend .flex-row, .flex-center, .flex-self-str;
+	height: 100%;
+	//padding: 10px !important;
+	margin: 0px !important;
 
-	@media screen and(max-width: $l){
-		//height: 70px;
-		//min-width: 100%;
-		//margin-left: 25px;
-	}
-	@media screen and(min-width: $l+1){
-		//min-height: 100%;
-		//width: 100%;
+	img{
+		min-height: 40px;
+		max-width: 100%;
 	}
 }
+
 
 .icon-group{
 		@extend .flex-row;
 		float: right !important;
+		//padding: 10px !important;
 
 		& > p{
-			margin: 20px;
-			max-width: 100px;
+			//margin: 20px;
 			text-align: left;
 		}	
 	}
@@ -218,13 +225,11 @@ body{
 	}
 
 .user-icon{
-		padding: 10px;
+		//padding: 10px;
 		border-radius: 50%;
 
 		@media screen and (max-width:$l){
 		 	font-size: 7em;
-		 	//height: 90px;
-			//width: 90px;
 			padding: 20px;
 			margin: 20px;
 			border: solid 5px $branco;
@@ -334,12 +339,13 @@ body{
 
 
 .header{
-
-	//@extend .default;
-	min-width: 100%;
-	height: auto;
-	padding: 15px !important;
+	@extend .default;
+	padding: 5px !important;
 	user-select:none;
+
+	&-item{
+		padding: 10px !important;
+	}
 }
 
 .menu1 {

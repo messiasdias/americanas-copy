@@ -1602,7 +1602,7 @@
 .flex-self-base {
   align-self: baseline !important;
 }
-.flex-self-str, .btn-custom, .search-group button, .search-group input {
+.flex-self-str, .btn-custom, .search-group input {
   align-self: stretch !important;
 }
 .flex-self-center {
@@ -1611,7 +1611,7 @@
 .flex-self-start {
   align-self: flex-start !important;
 }
-.flex-self-end, .logo {
+.flex-self-end {
   align-self: flex-end !important;
 }
 .flex-self-ini {
@@ -1729,11 +1729,14 @@ body {
 }
 
 .col, .row {
+  position: relative;
   margin: 0 !important;
   padding: 0 !important;
+  min-height: 100% inherit;
+  min-width: 100% inherit;
 }
 
-.default {
+.default, .header {
   background-color: #e60014 !important;
   color: #FFFFFF;
 }
@@ -1746,7 +1749,6 @@ body {
 .search-group {
   background-color: #FFFFFF !important;
   color: #e60014;
-  margin: auto 20px;
 }
 .search-group input {
   border: none !important;
@@ -1775,8 +1777,8 @@ body {
 }
 .search-group button {
   height: 100;
-  width: 3em;
-  padding: 10px;
+  width: 2em;
+  padding: 7px;
   cursor: pointer !important;
   border-color: #FFFFFF;
   border-style: solid;
@@ -1802,15 +1804,19 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-  user-select: none;
+.logo-content {
+  height: 100%;
+  margin: 0px !important;
 }
+.logo-content img {
+  min-height: 40px;
+  max-width: 100%;
+}
+
 .icon-group {
   float: right !important;
 }
 .icon-group > p {
-  margin: 20px;
-  max-width: 100px;
   text-align: left;
 }
 
@@ -1831,7 +1837,6 @@ body {
 }
 
 .user-icon {
-  padding: 10px;
   border-radius: 50%;
 }
 @media screen and (max-width: 990px) {
@@ -1930,10 +1935,11 @@ body {
 }
 
 .header {
-  min-width: 100%;
-  height: auto;
-  padding: 15px !important;
+  padding: 5px !important;
   user-select: none;
+}
+.header-item {
+  padding: 10px !important;
 }
 
 .menu1 {
