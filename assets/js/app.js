@@ -24,6 +24,7 @@ function import_script(name, pathDefault = true){
 //import_script('jquery.min.js');
 import_script('fontawesome.min.js');
 import_script('materialize.min.js');
+import_script('header.js');
 import_script('main.js');
 
 
