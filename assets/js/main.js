@@ -120,6 +120,45 @@ function destac_content_up(element){
 function destac_content_down(element){
    $('.overlay').hide();
    $(element).removeClass('destac-content');
+}
+
+function header_animate(){
+
+	if( $(window).scrollTop() >= 60){
+
+  		$( ".header" ).css({
+  			"position":"fixed",
+  			"top": "0px",
+  			"width":"100%" 
+  		});
+
+ 		$(".menu1" ).css({
+  			"position":"fixed",
+  			"top": $( ".header" ).height()+"px"
+  		});
+
+
+  		if( $(window).scrollTop() >= 80){
+  			$(".menu1").slideUp(100);
+  		}
+
+  	}else{
+
+  		$( ".header" ).css({
+  			"position":"initial",
+  			"top": "initial",
+  			"width":"initial" 
+  		});
+
+ 		$(".menu1" ).css({
+  			"position":"initial",
+  			"top": "initial"
+  		});
+
+  		if( $(window).scrollTop() < 80){
+  			$(".menu1").slideDown(200);
+  		}
+  	}
 }	
 
 
@@ -135,6 +174,7 @@ $(document).ready( function(){
   /* Jquery document onscroll */	
   $(window).scroll(function(){
   	//header_login();
+  	header_animate();
   });
 
   /* Jquery document resize */	

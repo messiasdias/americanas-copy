@@ -1670,6 +1670,7 @@
 /*Start layout custom */
 html {
   scroll-behavior: smooth;
+  transition: all 0.1s ease-in-out;
   /* width */
   /* Track */
   /* Handle */
@@ -1907,6 +1908,7 @@ body {
 }
 
 .banner {
+  z-index: -1;
   background-image: url("/assets/img/top.png") !important;
   background-size: 20% 10%;
   background-repeat: repeat-x;
@@ -1914,6 +1916,7 @@ body {
   font-weight: bold;
   font-size: 2em;
   min-width: 100%;
+  min-height: 50px;
   border-bottom: solid 2px #FFFFFF;
   opacity: 0.7;
   user-select: none;
@@ -1937,12 +1940,14 @@ body {
 .header {
   padding: 5px !important;
   user-select: none;
+  z-index: 3;
 }
 .header-item {
   padding: 10px !important;
 }
 
 .menu1 {
+  z-index: 3;
   background-color: #FFFFFF;
   width: 100% !important;
   height: auto;
@@ -2025,6 +2030,111 @@ body {
   width: 10%;
   height: 10%;
   background-color: #666;
+}
+
+.main {
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  overflow-x: hidden;
+}
+
+.publicidade1 {
+  width: 94%;
+  margin: 0 3%;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 990px) {
+  .publicidade1 {
+    height: 216px;
+    background: url("/assets/img/publicidade2-mobile.png");
+  }
+}
+@media screen and (min-width: 991px) {
+  .publicidade1 {
+    min-height: 180px;
+    background: url("/assets/img/publicidade2.png");
+  }
+}
+
+.slider1 {
+  position: relative;
+  border: solid 1px red;
+  width: 94%;
+  min-height: 200px;
+  margin: 15px 3%;
+}
+.slider1 > #previus, .slider1 > #next {
+  background-color: #FFFFFF;
+  position: absolute;
+  font-size: 3em;
+  font-weight: 100;
+  color: #ccc;
+  padding: 15px;
+  cursor: pointer;
+  top: 35%;
+}
+.slider1 > #previus:hover, .slider1 > #next:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #666666;
+}
+.slider1 > #previus {
+  left: 10%;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.slider1 > #next {
+  right: 10%;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.slider1 > #content {
+  border: solid 1px blue;
+  background-color: rgba(109, 109, 109, 0.3);
+  width: 100%;
+  height: 100%;
+}
+.slider1 > #content img {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 200px;
+}
+.slider1 > #slicks {
+  background-color: green;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  height: 30px;
+  z-index: 2;
+}
+.slider1 > #slicks ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: solid 1px yellow;
+  display: inline-flex;
+  width: 100%;
+  height: 30px;
+  list-style: none;
+  list-style: none;
+}
+.slider1 > #slicks ul li {
+  margin: 5px;
+}
+.slider1 > #slicks ul li button {
+  border: none !important;
+  background-color: #ccc;
+  height: 5px;
+  width: 20px;
+  cursor: pointer;
+}
+.slider1 > #slicks ul li button:hover {
+  background-color: #666666;
+}
+.slider1 > #slicks ul li button:active, .slider1 > #slicks ul li button .active {
+  background: #e60014;
 }
 
 /*End layout custom */
