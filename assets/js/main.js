@@ -106,28 +106,37 @@ function destac_content_down(element){
    $(element).removeClass('destac-content');
 }
 
+function rotate(element, deg){
+	//$(element).css("tranform", "rotate("+deg+"deg)");
+	$(element).addClass("rotate");
+	console.log($(element));
+}
+
+function rotate_start(element){
+	//$(element).css("tranform", "rotate(0)");
+	$(element).removeClass("rotate");
+}
 
  //On Load full execute the main funtion
 function main(){
 	header_main();
 }
 
-
 /* Jquery document onready */
 $(document).ready( function(){
  
-  /* Jquery document onscroll */	
-  $(window).scroll(function(){
+ /* Jquery document onscroll */	
+ $(window).scroll(function(){
   	header_scroll();
   });
 
-  /* Jquery document resize */	
-  $(window).resize(function(){
+ /* Jquery document resize */	
+ $(window).resize(function(){
   	header_resize();
   });
 
   /* Jquery Document Click*/
-  $(document).click(function(event){
+ $(document).click(function(event){
 
   	if( !$(event.target.parentNode).hasClass('destac-content') ){
   	 destac_content_down('.search-group');
@@ -141,36 +150,59 @@ $(document).ready( function(){
   	  	
   });
 
-  /* Jquery Document onkeydown*/
+ /* Jquery Document onkeydown*/
 
-  $(document).keydown(function(event){
-  	console.log( $(this) );
+ $(document).keydown(function(event){
+  	//console.log( $(this) );
   });
 
 
- $( ".expand" ).hover(function() {
+$( ".expand" ).hover(function() {
 	   $($(this).attr('expand')).show();
 	  },null);
 
- $( ".user-icon" ).hover(function() {
+
+$( ".user-icon" ).hover(function() {
 	   $($(this).attr('expand')).show();
 	  },null);
+
 
 $('.user-icon').click(function(){
   	$('.header-login').show();
   });
 
+
 $('.search-group>input').focus(function(){
-	console.log($('.search-group') );
 	destac_content_up('.search-group');
 });
 
 
+$( ".departments" ).hover(function() {
+	if (!$(".childs1").is(":visible")) {
+		$(".childs1").slideDown(200);
+		//destac_content_up('.departments');
+		rotate(".childs1>li.top>svg.fa-chevron-down", 120);
+		rotate(".menu1>ul>li.departments>svg.fa-chevron-down", 120);
+		destac_content_up('.childs1');
+	}
+}, 
+null);
 
 
-  //On Load full execute the main funtion
-  main();
-  	
+$( ".childs1" ).hover(null,function() {
+	if ($(".childs1").is(":visible")) {
+		$(".childs1").slideUp(200);
+		//destac_content_down('.departments');
+		destac_content_down('.childs1');
+		rotate_start(".childs1>li.top>svg.fa-chevron-down");
+		rotate_start(".menu1>ul>li.departments>svg.fa-chevron-down");
+	}
+}); 
+
+
+
+ //On Load full execute the main funtion
+ main();
 
 });
 

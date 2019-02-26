@@ -1737,7 +1737,7 @@ body {
   min-width: 100% inherit;
 }
 
-.default, .header {
+.default, .menu1 .destac4, .header {
   background-color: #e60014 !important;
   color: #FFFFFF;
 }
@@ -1952,7 +1952,6 @@ body {
   width: 100% !important;
   height: auto;
   margin: 0;
-  border-bottom: solid 2px rgba(102, 102, 102, 0.1) !important;
 }
 .menu1 ::-webkit-scrollbar {
   z-index: -1;
@@ -1988,7 +1987,13 @@ body {
   border-bottom: solid 2.5px #e60014;
   line-height: 0.1em !important;
 }
-.menu1 ul {
+.menu1 .destac4 {
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 2px 5px;
+  margin-left: 10px;
+}
+.menu1 > ul {
   height: 100%;
   padding: 14px !important;
   margin: 0 auto;
@@ -1998,38 +2003,89 @@ body {
   white-space: nowrap;
   user-select: none;
   text-align: center;
+  border-bottom: solid 2px rgba(102, 102, 102, 0.1) !important;
 }
-.menu1 ul li {
+.menu1 > ul > li {
   z-index: 2;
   display: inline !important;
   white-space: nowrap;
   height: 100%;
 }
-.menu1 ul li a {
+.menu1 > ul > li > a {
   text-transform: lowercase;
   color: #666;
   padding: 20px;
   transition: background 0.4s ease-in-out;
 }
 @media screen and (max-width: 990px) {
-  .menu1 ul li a {
+  .menu1 > ul > li > a {
     font-size: 39px;
   }
 }
 @media screen and (min-width: 991px) {
-  .menu1 ul li a {
+  .menu1 > ul > li > a {
     font-size: 1em;
   }
 }
-.menu1 ul li a:hover {
+.menu1 > ul > li > a:hover {
   transition: background 0.4s ease-in-out;
   background-color: rgba(102, 102, 102, 0.1);
 }
-.menu1 ul li a:before {
-  content: "";
-  width: 10%;
-  height: 10%;
-  background-color: #666;
+.menu1 .childs1 {
+  position: absolute;
+  z-index: 5;
+  background-color: #FFFFFF;
+  list-style: none;
+  display: table;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: none;
+  transition: 2s ease-in-out;
+  transition-delay: 5s;
+}
+.menu1 .childs1 .top {
+  padding: 15px !important;
+}
+.menu1 .childs1 .top svg .fa-chevron-down {
+  transition: 2s ease-in-out;
+  transition-delay: 2s;
+}
+.menu1 .childs1 .top:hover {
+  background-color: #FFFFFF !important;
+}
+.menu1 .childs1 .bottom {
+  border-top: solid 1px #ccc !important;
+}
+.menu1 .childs1 .rotate {
+  transform: rotate(180deg);
+  transition: 2s ease-in-out;
+  transition-delay: 2s;
+}
+.menu1 .childs1 .rotate_start {
+  transform: rotate(180deg);
+  transition: 2s ease-in-out;
+  transition-delay: 2s;
+}
+.menu1 .childs1 > li {
+  color: #666;
+  text-align: left;
+  min-width: 100%;
+  padding: 7px;
+}
+.menu1 .childs1 > li .fa-chevron-right {
+  font-size: 0.6em;
+  text-align: right;
+  float: right;
+  margin: 5px;
+}
+.menu1 .childs1 > li > .fa-chevron-down {
+  transition: all 0.6s ease-in-out;
+  transition-delay: 1s;
+}
+.menu1 .childs1 > li:hover {
+  transition: background 0.4s ease-in-out;
+  background-color: rgba(102, 102, 102, 0.1);
+  cursor: pointer;
 }
 
 .main {

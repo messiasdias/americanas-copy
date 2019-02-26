@@ -357,7 +357,7 @@ body{
 	width: 100% !important;
 	height: auto;
 	margin: 0;
-	border-bottom: solid 2px  rgba(102,102,102,.1) !important;
+	//border-bottom: solid 2px  rgba(102,102,102,.1) !important;
 
 		::-webkit-scrollbar {
 		  z-index: -1;
@@ -406,7 +406,15 @@ body{
 		line-height: .1em !important;
 	}
 
-	ul{
+	.destac4{
+		@extend .default;
+		font-weight: bold;
+		font-size: .8em;
+		padding: 2px 5px;
+		margin-left: 10px;
+	}
+
+	& > ul{
 		height: 100%;
 		padding: 14px !important;
 		margin: 0 auto;
@@ -416,18 +424,18 @@ body{
 		white-space: nowrap;
 		user-select:none;
 		text-align: center;
+		border-bottom: solid 2px  rgba(102,102,102,.1) !important;
 		
 
-		li{
+		& > li{
 
 			z-index: 2;
 			display: inline !important;
 			white-space: nowrap;
-			//margin: 10px 10px ;
 			height: 100%;
 
 
-			a{
+			& > a{
 				text-transform: lowercase;	
 				color: $cor2;
 				padding: 20px;
@@ -446,15 +454,78 @@ body{
 					background-color: rgba(102,102,102,.1);
 				}
 
-				&:before{
-					content: "";
-					//position: absolute;
-					width: 10% ;
-					height: 10%;
-					background-color: #666;
-				}
+				
 			}
 		}
+	}
+
+
+.childs1{
+			position:absolute;
+			z-index: 5;
+			background-color: $branco;
+			list-style: none;
+			display: table;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			display: none;
+			transition: 2s ease-in-out;
+			transition-delay: 5s;
+
+			& .top {
+				padding: 15px !important;
+				& svg .fa-chevron-down{
+					transition: 2s ease-in-out;
+					transition-delay: 2s;
+				}
+
+				&:hover{
+					background-color: $branco !important;
+				}
+			} 
+
+			& .bottom{
+				border-top: solid 1px #ccc !important;
+			}
+
+			& .rotate{
+				transform: rotate(180deg);
+				transition: 2s ease-in-out;
+				transition-delay: 2s;
+			}
+
+			& .rotate_start{
+				transform: rotate(180deg);
+				transition: 2s ease-in-out;
+				transition-delay: 2s;
+			}
+
+
+			& > li{
+				color: $cor2;
+				text-align: left;
+				min-width: 100%;
+				padding: 7px;
+
+				& .fa-chevron-right{
+					font-size: .6em;
+					text-align: right;
+					float: right;
+					margin: 5px;
+				}
+
+				& > .fa-chevron-down{
+					transition: all .6s ease-in-out;
+					transition-delay: 1s;
+				}		
+
+				&:hover{
+					transition: background .4s ease-in-out;
+					background-color: rgba(102,102,102,.1);
+					cursor: pointer;
+				}
+			}
+
 	}
 }	
 
