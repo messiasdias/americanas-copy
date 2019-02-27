@@ -1,15 +1,16 @@
 /* Main.js  script */
 
-function ajax(url, method = 'GET', dataType = 'json', data=null, async=false){
+function ajax(url, method = 'GET', datatype = 'json', data=null, asyncv=false){
 	var result;
 
 	$.ajax({
 	  method: method,
-	  dataType: dataType,
+	  dataType: datatype,
 	  url: url,
-	  async: async,
+	  async: asyncv,
 	  data:data, 
 	  success: function(data, status) {
+
 	  		result = data;
 	  		//console.log(data);
    	 },
@@ -135,6 +136,7 @@ function rotate_start(element){
  //On Load full execute the main funtion
 function main(){
 	header_main();
+	load_slider("slider1");
 }
 
 /* Jquery document onready */

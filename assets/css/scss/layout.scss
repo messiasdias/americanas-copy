@@ -598,7 +598,6 @@ body{
 
 .slider1{
 	position: relative;
-	border: solid 1px red;
 	width: 94%;
 	min-height: 200px;
 	margin: 15px 3%;
@@ -630,22 +629,21 @@ body{
 	}
 
 	& > #content{
-		border: solid 1px blue;
 		background-color: rgba(109,109,109,.3);
-		width: 100%;
-		height: 100%;
-		
+	
 		img {
 			z-index: -1;
 			width: 100%;
 			height: 100%;
 			min-width: 100%;
 			min-height: 200px;
+			animation: left .3s ease-in-out;
+			transition: all 2s ease-in-out;
 		}
 	}
 
 	& > #slicks{
-		background-color: green;
+		background-color: $branco;
 		position: absolute;
 		bottom: -30px;
 		width: 100%;
@@ -656,12 +654,12 @@ body{
 			position: relative;
 			width: 100%;
 			height: 100%;
-			border: solid 1px yellow;
 			display: inline-flex;
 			width: 100%;
 			height: 30px;
 			list-style: none;
 			list-style: none;
+			@extend .flex-center;
 		
 			li{
 				margin: 5px;
@@ -676,11 +674,15 @@ body{
 						background-color: #666666;
 					}
 
-					&:active, & .active{
+					&:active{
 						background: $cor1 ;
 					}
 				}
 			}
+
+			 & .active{
+						background: $cor1 ;
+			 }
 		}
 	}
 }
