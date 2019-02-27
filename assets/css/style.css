@@ -2036,22 +2036,57 @@ body {
   z-index: 5;
   background-color: #FFFFFF;
   list-style: none;
-  display: table;
   overflow-x: hidden;
   overflow-y: scroll;
-  display: none;
   transition: 2s ease-in-out;
-  transition-delay: 5s;
+  display: none;
 }
-.menu1 .childs1 .top {
-  padding: 15px !important;
+@media screen and (max-width: 990px) {
+  .menu1 .childs1 {
+    top: 0px !important;
+    left: 0px !important;
+    min-width: 200px;
+  }
 }
-.menu1 .childs1 .top svg .fa-chevron-down {
+@media screen and (max-width: 990px) {
+  .menu1 .childs1 > .top {
+    background-color: #e60014;
+    color: #FFFFFF;
+    height: 100px;
+    font-size: 1.6em;
+    font-weight: 100;
+  }
+}
+@media screen and (min-width: 991px) {
+  .menu1 .childs1 > .top {
+    padding: 15px !important;
+  }
+}
+.menu1 .childs1 > .top .fa-chevron-down {
   transition: 2s ease-in-out;
   transition-delay: 2s;
 }
-.menu1 .childs1 .top:hover {
-  background-color: #FFFFFF !important;
+@media screen and (max-width: 990px) {
+  .menu1 .childs1 > .top .fa-chevron-down {
+    display: none;
+  }
+}
+@media screen and (max-width: 990px) {
+  .menu1 .childs1 > .top .fa-bars {
+    display: none;
+  }
+}
+@media screen and (max-width: 990px) {
+  .menu1 .childs1 > .top:hover {
+    color: #FFFFFF !important;
+    background-color: #e60014 !important;
+  }
+}
+@media screen and (min-width: 991px) {
+  .menu1 .childs1 > .top:hover {
+    color: #e60014 !important;
+    background-color: #FFFFFF !important;
+  }
 }
 .menu1 .childs1 .bottom {
   border-top: solid 1px #ccc !important;
@@ -2059,12 +2094,10 @@ body {
 .menu1 .childs1 .rotate {
   transform: rotate(180deg);
   transition: 2s ease-in-out;
-  transition-delay: 2s;
 }
 .menu1 .childs1 .rotate_start {
   transform: rotate(180deg);
   transition: 2s ease-in-out;
-  transition-delay: 2s;
 }
 .menu1 .childs1 > li {
   color: #666;
@@ -2080,12 +2113,17 @@ body {
 }
 .menu1 .childs1 > li > .fa-chevron-down {
   transition: all 0.6s ease-in-out;
-  transition-delay: 1s;
 }
 .menu1 .childs1 > li:hover {
   transition: background 0.4s ease-in-out;
   background-color: rgba(102, 102, 102, 0.1);
   cursor: pointer;
+}
+
+.toggle3 {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0%);
+  display: table;
 }
 
 .main {

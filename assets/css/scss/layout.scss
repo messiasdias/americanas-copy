@@ -461,26 +461,62 @@ body{
 
 
 .childs1{
-			position:absolute;
-			z-index: 5;
-			background-color: $branco;
-			list-style: none;
-			display: table;
-			overflow-x: hidden;
-			overflow-y: scroll;
-			display: none;
-			transition: 2s ease-in-out;
-			transition-delay: 5s;
+		position:absolute;
 
-			& .top {
-				padding: 15px !important;
-				& svg .fa-chevron-down{
+		@media screen and (max-width: $l){
+			top: 0px !important;
+			left: 0px !important;
+			min-width: 200px;
+		}
+
+		z-index: 5;
+		background-color: $branco;
+		list-style: none;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		transition: 2s ease-in-out;
+		display: none;
+
+			& > .top {
+				
+				@media screen and (max-width: $l){
+					background-color: $cor1;
+					color: $branco ;
+					height: 100px;
+					font-size: 1.6em;
+					font-weight: 100;
+				}
+
+				@media screen and (min-width:$l+1){
+					padding: 15px !important;
+				}
+
+				& .fa-chevron-down{
+					@media screen and (max-width: $l){
+						display: none;
+					}
 					transition: 2s ease-in-out;
 					transition-delay: 2s;
 				}
 
+				& .fa-bars{
+					@media screen and (max-width:$l){
+						display: none;
+					}
+				}	
+
 				&:hover{
-					background-color: $branco !important;
+
+					@media screen and (max-width:$l){
+						color: $branco !important;
+						background-color: $cor1 !important;	
+					}
+
+					@media screen and (min-width:$l+1){
+						color: $cor1 !important;
+						background-color: $branco !important;
+					}
+
 				}
 			} 
 
@@ -491,13 +527,11 @@ body{
 			& .rotate{
 				transform: rotate(180deg);
 				transition: 2s ease-in-out;
-				transition-delay: 2s;
 			}
 
 			& .rotate_start{
 				transform: rotate(180deg);
 				transition: 2s ease-in-out;
-				transition-delay: 2s;
 			}
 
 
@@ -516,7 +550,6 @@ body{
 
 				& > .fa-chevron-down{
 					transition: all .6s ease-in-out;
-					transition-delay: 1s;
 				}		
 
 				&:hover{
@@ -528,6 +561,12 @@ body{
 
 	}
 }	
+
+.toggle3{
+	transition: all 0.3s ease-in-out;
+	transform: translateX(0%);
+	display: table;
+}
 
 .main{
 	z-index: 2;

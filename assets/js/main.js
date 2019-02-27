@@ -70,6 +70,22 @@ function toggle2(element , target=null){
 
 }
 
+function toggle3(element){
+
+	console.log(element);
+
+	if ($(element).is(':visible')) {
+		console.log("visivel");
+		$(element).removeClass('toggle3');
+		$(element).slideToggle();
+	}else{
+		console.log("Não visivel");
+		$(element).addClass('toggle3');
+		$(element).slideToggle();
+		//$(element).slideDown(200);
+	}
+}
+
 function toggle_modalframe(element , src = "/",  target=null){
 	
 	if ($(element).hasClass('modal-custom')) {	
@@ -109,7 +125,6 @@ function destac_content_down(element){
 function rotate(element, deg){
 	//$(element).css("tranform", "rotate("+deg+"deg)");
 	$(element).addClass("rotate");
-	console.log($(element));
 }
 
 function rotate_start(element){
@@ -137,6 +152,10 @@ $(document).ready( function(){
 
   /* Jquery Document Click*/
  $(document).click(function(event){
+
+ 	if ($(".childs1").is(":visible")) {
+		destac_content_up('.childs1');
+	}
 
   	if( !$(event.target.parentNode).hasClass('destac-content') ){
   	 destac_content_down('.search-group');
@@ -180,7 +199,6 @@ $('.search-group>input').focus(function(){
 $( ".departments" ).hover(function() {
 	if (!$(".childs1").is(":visible")) {
 		$(".childs1").slideDown(200);
-		//destac_content_up('.departments');
 		rotate(".childs1>li.top>svg.fa-chevron-down", 120);
 		rotate(".menu1>ul>li.departments>svg.fa-chevron-down", 120);
 		destac_content_up('.childs1');
@@ -190,15 +208,17 @@ null);
 
 
 $( ".childs1" ).hover(null,function() {
-	if ($(".childs1").is(":visible")) {
+	if ($(".childs1").is(":visible") & ( $(document).width() > 990 ) ) {
 		$(".childs1").slideUp(200);
-		//destac_content_down('.departments');
 		destac_content_down('.childs1');
 		rotate_start(".childs1>li.top>svg.fa-chevron-down");
 		rotate_start(".menu1>ul>li.departments>svg.fa-chevron-down");
 	}
 }); 
 
+$(".menu-icon").click(function(){
+	toggle3(".childs1");
+});
 
 
  //On Load full execute the main funtion
