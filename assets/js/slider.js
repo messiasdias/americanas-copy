@@ -10,6 +10,7 @@ function slider_scroll(name){
 
 function slider_load(name){
 
+	slider_diretions_center(name);
 	var slide = ajax("/assets/json/"+name+".json") ;
 	$("."+name+">div#content>img").attr("src", slide[0].img);
 
@@ -20,16 +21,15 @@ function slider_load(name){
 	}
 
 	slider_run(name);
-	slider_diretions_center(name);
+
 }
 
-function slider_content_click(name){
-
-	$(location).attr("href", link);
-}
 
 function slider_diretions_center(name){
-	var top = '15%';
+
+	console.log( $('.'+name).offset()  ) ;
+
+	var top = ( ($('.'+name+'>div#content').offset().top - $('.'+name).height()) - ($("."+name+">span#previus").height()/2 ) )+'px';
 	$("."+name+">span#previus").css('top', top);
 	$("."+name+">span#next").css('top', top);
 }
@@ -63,7 +63,7 @@ function slider_set(name,item){
  	$('.slider1>div#slicks>ul>li>button[slide="'+item+'"]').addClass('active') ;
  	$("."+name+">div#content>a>img").hide();
  	$("."+name+">div#content>a").attr("href", slide[item-1].link);
- 	$("."+name+">div#content>img").attr("src", slide[item-1].img);
+ 	$("."+name+">div#content>a>img").attr("src", slide[item-1].img);
  	$("."+name+">div#content>a>img").show();
 }	
 

@@ -117,8 +117,6 @@ function header_main(){
 	 $("#search2").append($(".header>div#content>div#b>div.col.l8").html());
 	}
 
-	console.log($(".menu1>ul>li.childs1"));
-
 	if($("#search2").html().trim() == ''){
 	 $("#search2").append($(".header>div#content>div#b>div.col.l8").html());
 	}
