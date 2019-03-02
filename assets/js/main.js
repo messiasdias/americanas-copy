@@ -10,18 +10,16 @@ function ajax(url, method = 'GET', datatype = 'json', data=null, asyncv=false){
 	  async: asyncv,
 	  data:data, 
 	  success: function(data, status) {
-
-	  		result = data;
-	  		//console.log(data);
-   	 },
-   	 error: function(data, status) {
+	  	result = data;
+   	  },
+   	  error: function(data, status) {
    	 	result = false;
  
    	 	if(status == "parsererror"){
    	 	  console.log("Ajax Error: "+status+",\nO que Pode ser um Erro interno no arquivo chamado pelo Ajax.\nEste Arquivo deve Retornar um Json, Html ou xml (default: json) no Final.");
    	 	}
 
-   	 }
+   	  }
 
 	});
 
@@ -71,21 +69,6 @@ function toggle2(element , target=null){
 
 }
 
-function toggle3(element){
-
-	console.log(element);
-
-	if ($(element).is(':visible')) {
-		console.log("visivel");
-		$(element).removeClass('toggle3');
-		$(element).slideToggle();
-	}else{
-		console.log("Não visivel");
-		$(element).addClass('toggle3');
-		$(element).slideToggle();
-		//$(element).slideDown(200);
-	}
-}
 
 function toggle_modalframe(element , src = "/",  target=null){
 	

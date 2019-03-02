@@ -634,6 +634,7 @@ body{
 	& > #content{
 		background-color: $branco;
 		overflow: hidden;
+		cursor: pointer;
 	
 		img {
 			width: 100% inherit;
