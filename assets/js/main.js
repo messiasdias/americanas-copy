@@ -154,50 +154,17 @@ $(document).ready( function(){
 
   /* Jquery Document Click*/
  $(document).click(function(event){
-
- 	if ($(".childs1").is(":visible")) {
-		destac_content_up('.childs1');
-	}
-
-  	if( !$(event.target.parentNode).hasClass('destac-content') ){
-  	 destac_content_down('.search-group');
-    }
-
-  	if ( event.target.classList[0] != 'user-icon' ) {
-	  	if( $('.header-login').is(':visible') ){
-	  		$('.header-login').hide();
-	  	}
-    }
-  	  	
+ 	header_doc_click(event);
   });
 
  /* Jquery Document onkeydown*/
-
  $(document).keydown(function(event){
-  	//console.log( $(this) );
+ 	//code
   });
 
 
-$( ".expand" ).hover(function() {
-	   $($(this).attr('expand')).show();
-	  },null);
 
-
-$( ".user-icon" ).hover(function() {
-	   $($(this).attr('expand')).show();
-	  },null);
-
-
-$('.user-icon').click(function(){
-  	$('.header-login').show();
-  });
-
-
-$('.search-group>input').focus(function(){
-	destac_content_up('.search-group');
-});
-
-
+/*
 $( ".departments" ).hover(function() {
 	if (!$(".childs1").is(":visible")) {
 		$(".childs1").slideDown(200);
@@ -216,11 +183,9 @@ $( ".childs1" ).hover(null,function() {
 		rotate_start(".childs1>li.top>svg.fa-chevron-down");
 		rotate_start(".menu1>ul>li.departments>svg.fa-chevron-down");
 	}
-}); 
+});  */
 
-$(".menu-icon").click(function(){
-	toggle3(".childs1");
-});
+
 
 
  //On Load full execute the main funtion

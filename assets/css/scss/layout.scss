@@ -308,9 +308,9 @@ body{
 .banner{
 	z-index: -1;
 	@extend .default-rev, .flex-center;
-	background-image: url('/assets/img/top.png') !important;
-	background-size: 20% 10%;
-	background-repeat: repeat-x;
+	background-image: url('/assets/img/top2.png') !important;
+	//background-size: 20% 10%;
+	//background-repeat: repeat-x;
 	background-attachment: fixed;
 	font-weight: bold;
 	font-size: 2em;
@@ -319,8 +319,10 @@ body{
 	border-bottom: solid 2px $branco;
 	opacity: .7;
 	user-select:none;
+	cursor: pointer;
 	
 	& > p{
+		display: none;
 		padding: 5px;
 		background-color: $branco;
 		width:auto;

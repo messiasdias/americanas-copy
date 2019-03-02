@@ -62,6 +62,24 @@ function header_animate() {
   	}
 }
 
+function header_menu1_up(){
+	if (!$(".childs1").is(":visible")) {
+		$(".childs1").slideDown(200);
+		rotate(".childs1>li.top>svg.fa-chevron-down", 120);
+		rotate(".menu1>ul>li.departments>svg.fa-chevron-down", 120);
+		destac_content_up('.childs1');
+	}
+}
+
+function header_menu1_down(){
+	if ($(".childs1").is(":visible") & ( $(document).width() > 990 ) ) {
+		$(".childs1").slideUp(200);
+		destac_content_down('.childs1');
+		rotate_start(".childs1>li.top>svg.fa-chevron-down");
+		rotate_start(".menu1>ul>li.departments>svg.fa-chevron-down");
+	}
+}
+
 function header_resize() {
 	header_login();
 
@@ -74,6 +92,22 @@ function header_scroll() {
 	if(!$(".childs1").is(":visible")){
 		header_animate();
 	}
+}
+
+function header_doc_click(event){
+	if ($(".childs1").is(":visible")) {
+		destac_content_up('.childs1');
+	}
+
+  	if( !$(event.target.parentNode).hasClass('destac-content') ){
+  	 destac_content_down('.search-group');
+    }
+
+  	if ( event.target.classList[0] != 'user-icon' ) {
+	  	if( $('.header-login').is(':visible') ){
+	  		$('.header-login').hide();
+	  	}
+    }
 }
 
 function header_main(){

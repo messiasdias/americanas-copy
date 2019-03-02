@@ -11,7 +11,7 @@
 
 	<div class="overlay"></div>
 
-	<div class="banner hide-on-small-only hide-on-med-only">
+	<div onclick="$(location).attr('href','/teste-banner-top')" class="banner hide-on-small-only hide-on-med-only">
 		
 		<p><b class="destac">americanas</b>.com</p>
 
@@ -23,7 +23,7 @@
 
 		<div id="a" style="margin: 15px auto !important;"  class="col s6 m6 l2 logo-content flex-row flex-items-center">
 
-			<i onclick="" class="menu-icon fas fa-bars hide-on-large-only"></i>
+			<i onclick="toggle2('.childs1')" class="menu-icon fas fa-bars hide-on-large-only"></i>
 
 			<a href="/"><img class="logo responsive-img" src="/assets/img/logo.png" alt="Americanas.com"> </a>
 		</div>
@@ -34,7 +34,7 @@
 
 				<form style="margin: 15px !important;" class="search-group" action="" method="post" accept-charset="utf-8">
 
-						<input  id="search" name="search" placeholder=" tem tuuudo, pode procurar :)" type="text" autocomplete="off" tabindex="2" />
+						<input onfocus="destac_content_up('.search-group')"  id="search" name="search" placeholder=" tem tuuudo, pode procurar :)" type="text" autocomplete="off" tabindex="2" />
 
 
 						<button id="search_ok" name="search_ok" type="submit">
@@ -50,10 +50,10 @@
 
 				<div class="s6 m6 l6 flex-right">
 
-					<i class="user-icon far fa-user" expand="#header-login"></i>
+					<i onmouseover=" $($(this).attr('expand')).show()" onclick="$('.header-login').show()" class="user-icon far fa-user" expand="#header-login"></i>
 
 					<p class="hide-on-small-only hide-on-med-only  left-align ">olá, faça seu login ou cadastre-se
-						<i class="expand fa fa-chevron-down" expand="#header-login" ></i>
+						<i onmouseover="$($(this).attr('expand')).show()" class="expand fa fa-chevron-down" expand="#header-login" ></i>
 					</p>
 
 					<div  id="header-login" class="header-login z-depth-5">
@@ -104,13 +104,13 @@
 
 		<!-- .menu1 -->
 			<ul>
-				<li class="departments"><a class="destac destac1 hide-on-small-only hide-on-med-only" href="#" title="">
+				<li onmouseover="header_menu1_up()" class="departments"><a class="destac destac1 hide-on-small-only hide-on-med-only" href="#" title="">
 					<i class="fas fa-bars "></i>&nbsp;compre por departamento <i class="fas fa-chevron-down"></i>
 				</a>
 
 				<!-- compre por departamento -->
 
-				<ul class="childs1">
+				<ul onmouseleave="header_menu1_down()" class="childs1">
 					<li class="top destac destac1" style="">
 						<i class="fas fa-bars "></i>&nbsp;compre por departamento <i  class="fas fa-chevron-down"></i>
 					</li>

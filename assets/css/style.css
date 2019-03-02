@@ -1909,9 +1909,7 @@ body {
 
 .banner {
   z-index: -1;
-  background-image: url("/assets/img/top.png") !important;
-  background-size: 20% 10%;
-  background-repeat: repeat-x;
+  background-image: url("/assets/img/top2.png") !important;
   background-attachment: fixed;
   font-weight: bold;
   font-size: 2em;
@@ -1920,8 +1918,10 @@ body {
   border-bottom: solid 2px #FFFFFF;
   opacity: 0.7;
   user-select: none;
+  cursor: pointer;
 }
 .banner > p {
+  display: none;
   padding: 5px;
   background-color: #FFFFFF;
   width: auto;
