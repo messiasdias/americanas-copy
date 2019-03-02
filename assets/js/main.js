@@ -136,7 +136,7 @@ function rotate_start(element){
  //On Load full execute the main funtion
 function main(){
 	header_main();
-	load_slider("slider1");
+	slider_load("slider1");
 }
 
 /* Jquery document onready */
@@ -145,11 +145,13 @@ $(document).ready( function(){
  /* Jquery document onscroll */	
  $(window).scroll(function(){
   	header_scroll();
+  	slider_resize("slider1");
   });
 
  /* Jquery document resize */	
  $(window).resize(function(){
   	header_resize();
+  	slider_resize("slider1");
   });
 
   /* Jquery Document Click*/
@@ -161,32 +163,6 @@ $(document).ready( function(){
  $(document).keydown(function(event){
  	//code
   });
-
-
-
-/*
-$( ".departments" ).hover(function() {
-	if (!$(".childs1").is(":visible")) {
-		$(".childs1").slideDown(200);
-		rotate(".childs1>li.top>svg.fa-chevron-down", 120);
-		rotate(".menu1>ul>li.departments>svg.fa-chevron-down", 120);
-		destac_content_up('.childs1');
-	}
-}, 
-null);
-
-
-$( ".childs1" ).hover(null,function() {
-	if ($(".childs1").is(":visible") & ( $(document).width() > 990 ) ) {
-		$(".childs1").slideUp(200);
-		destac_content_down('.childs1');
-		rotate_start(".childs1>li.top>svg.fa-chevron-down");
-		rotate_start(".menu1>ul>li.departments>svg.fa-chevron-down");
-	}
-});  */
-
-
-
 
  //On Load full execute the main funtion
  main();

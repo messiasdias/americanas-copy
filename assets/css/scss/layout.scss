@@ -604,9 +604,10 @@ body{
 	min-height: 200px;
 	margin: 15px 3%;
 
+
 	& > #previus, & > #next{
-		background-color: $branco;
 		position: absolute;
+		background-color: $branco;
 		font-size: 3em;
 		font-weight: 100;
 		color: #ccc;
@@ -631,45 +632,38 @@ body{
 	}
 
 	& > #content{
-		background-color: rgba(109,109,109,.3);
+		background-color: $branco;
+		overflow: hidden;
 	
 		img {
-			z-index: -1;
-			width: 100%;
-			height: 100%;
-			min-width: 100%;
-			min-height: 200px;
-			animation: left .3s ease-in-out;
-			transition: all 2s ease-in-out;
+			width: 100% inherit;
+			height: 100% inherit;
 		}
 	}
 
 	& > #slicks{
 		background-color: $branco;
 		position: absolute;
-		bottom: -30px;
 		width: 100%;
-		height: 30px;
+		height: 40px;
 		z-index: 2;
 		
 		ul{
-			position: relative;
-			width: 100%;
-			height: 100%;
+
 			display: inline-flex;
 			width: 100%;
 			height: 30px;
 			list-style: none;
-			list-style: none;
 			@extend .flex-center;
 		
 			li{
-				margin: 5px;
+
 				button{
 					border: none !important;
 					background-color: #ccc;
 				 	height: 5px;
 				 	width: 20px;
+				 	margin: 2.5px;
 				 	cursor: pointer;
 
 					&:hover{

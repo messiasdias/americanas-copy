@@ -1,5 +1,14 @@
 
-function load_slider(name){
+function slider_resize(name){
+	slider_diretions_center(name);
+}
+
+function slider_scroll(name){
+	slider_diretions_center(name);
+}
+
+
+function slider_load(name){
 
 	var slide = ajax("/assets/json/"+name+".json") ;
 	$("."+name+">div#content>img").attr("src", slide[0].src);
@@ -10,11 +19,18 @@ function load_slider(name){
 		$(".slider1>div#slicks>ul").append('<li><button slide="'+slide[i].id+'" class="'+classe+'" ></button> </li>');
 	}
 
-	run_slider(name);
+	slider_run(name);
+	slider_diretions_center(name);
 }
 
 
-function prev_slider(name){
+function slider_diretions_center(name){
+	var top = '35%';
+	$("."+name+">span>#prev").css('top', top);
+	$("."+name+">span>#next").css('top', top);
+}
+
+function slider_prev(name){
 	var total = ajax("/assets/json/"+name+".json").length;
 	var prev =  parseInt($(".slider1>div#slicks>ul>li>button.active").attr("slide") ) - parseInt(1);
 	
@@ -22,22 +38,22 @@ function prev_slider(name){
 		prev = total;
 	}
 
-	set_slider(name, prev);
+	slider_set(name, prev);
 }
 
 
-function next_slider(name){
+function slider_next(name){
 	var total = ajax("/assets/json/"+name+".json").length;
 	var next = parseInt($(".slider1>div#slicks>ul>li>button.active").attr("slide") ) + parseInt(1);
 
 	if ( next > total ){
 		next = parseInt(1);
 	}
-	set_slider(name, next);
+	slider_set(name, next);
 }
 
 
-function set_slider(name,item){
+function slider_set(name,item){
 	var slide = ajax("/assets/json/"+name+".json");
 	$(".slider1>div#slicks>ul>li>button.active").removeClass('active');
  	$('.slider1>div#slicks>ul>li>button[slide="'+item+'"]').addClass('active') ;
@@ -47,8 +63,8 @@ function set_slider(name,item){
 }	
 
 
-function run_slider(name){
+function slider_run(name){
   setInterval(function(){
-   	next_slider(name);
+   slider_next(name);
     }, 5000);
 }
