@@ -2162,6 +2162,7 @@ body {
 }
 .slider1 > #previus, .slider1 > #next {
   position: absolute;
+  z-index: 5;
   background-color: #FFFFFF;
   font-size: 3em;
   font-weight: 100;
@@ -2169,6 +2170,7 @@ body {
   padding: 15px;
   cursor: pointer;
   display: none;
+  top: 35%;
 }
 .slider1 > #previus:hover, .slider1 > #next:hover {
   background-color: rgba(255, 255, 255, 0.3);
@@ -2184,7 +2186,6 @@ body {
 }
 .slider1 > #content {
   background-color: #FFFFFF;
-  overflow: hidden;
   cursor: pointer;
 }
 .slider1 > #content img {

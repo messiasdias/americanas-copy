@@ -27,11 +27,16 @@ function slider_load(name){
 
 function slider_diretions_center(name){
 
-	console.log( $('.'+name).offset()  ) ;
+	//$("."+name+">span#previus").hide();
+	//$("."+name+">span#next").hide();
 
-	var top = ( ($('.'+name+'>div#content').offset().top - $('.'+name).height()) - ($("."+name+">span#previus").height()/2 ) )+'px';
-	$("."+name+">span#previus").css('top', top);
-	$("."+name+">span#next").css('top', top);
+	var top = ( ( ( $('.'+name+'>div#content>a>img').offset().top/2)) - ($("."+name+">span#previus").height() ) )+"px" 
+	//$("."+name+">span#previus").css('top', top);
+	//$("."+name+">span#next").css('top', top);
+
+	$("."+name+">span#previus").show();
+	$("."+name+">span#next").show();
+
 }
 
 function slider_prev(name){
@@ -58,6 +63,8 @@ function slider_next(name){
 
 
 function slider_set(name,item){
+
+	slider_diretions_center(name);
 	var slide = ajax("/assets/json/"+name+".json");
 	$(".slider1>div#slicks>ul>li>button.active").removeClass('active');
  	$('.slider1>div#slicks>ul>li>button[slide="'+item+'"]').addClass('active') ;
@@ -69,6 +76,11 @@ function slider_set(name,item){
 
 
 function slider_run(name){
+
+  setInterval(function(){
+  	slider_diretions_center(name);
+  }, 100);	
+
   setInterval(function(){
    	slider_next(name);
     }, 15000);

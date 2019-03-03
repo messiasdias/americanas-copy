@@ -608,6 +608,7 @@ body{
 
 	& > #previus, & > #next{
 		position: absolute;
+		z-index: 5;
 		background-color: $branco;
 		font-size: 3em;
 		font-weight: 100;
@@ -615,7 +616,7 @@ body{
 		padding: 15px;
 		cursor: pointer;
 		display: none;
-		//top: 35%;
+		top: 35%;
 
 		&:hover{
 			background-color: $branco2;
@@ -635,7 +636,7 @@ body{
 
 	& > #content{
 		background-color: $branco;
-		overflow: hidden;
+		//overflow: hidden;
 		cursor: pointer;
 	
 		img {
