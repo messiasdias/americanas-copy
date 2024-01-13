@@ -350,6 +350,39 @@ body{
 	}
 }
 
+.destac{
+	font-weight: bold;
+	color: $cor2;
+}
+
+.destac1{
+	color: $cor1 !important;
+	&:hover{
+		background-color: transparent;
+	}
+}
+
+.destac2{
+	&:hover{
+		background-color: #FFFF00 !important ;
+	}
+}
+
+.destac3{
+	color: $cor1 !important;
+	border-top: solid 2.5px $cor1;
+	border-bottom: solid 2.5px $cor1;
+	line-height: .1em !important;
+}
+
+.destac4{
+	@extend .default;
+	font-weight: bold;
+	font-size: .8em;
+	padding: 2px 5px;
+	margin-left: 10px;
+}
+
 .menu1 {
 	z-index:3;
 	background-color: $branco;
@@ -378,40 +411,6 @@ body{
 		  display: none;
 		}
 
-
-
-	.destac{
-		font-weight: bold;
-		color: $cor2;
-	}
-
-	.destac1{
-		color: $cor1 !important;
-		&:hover{
-			background-color: transparent;
-		}
-	}
-
-	.destac2{
-		&:hover{
-			background-color: #FFFF00 !important ;
-		}
-	}
-
-	.destac3{
-		color: $cor1 !important;
-		border-top: solid 2.5px $cor1;
-		border-bottom: solid 2.5px $cor1;
-		line-height: .1em !important;
-	}
-
-	.destac4{
-		@extend .default;
-		font-weight: bold;
-		font-size: .8em;
-		padding: 2px 5px;
-		margin-left: 10px;
-	}
 
 	& > ul{
 		height: 100%;
@@ -596,7 +595,7 @@ body{
 }
 
 
-.slider1{
+.slider{
 	position: relative;
 	width: 94%;
 	min-height: 200px;
@@ -681,6 +680,31 @@ body{
 						background: $cor1 ;
 			 }
 		}
+	}
+}
+
+
+#warning {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background: yellow;
+	color: red;
+	text-align: center;
+	text-justify: left;
+	padding-bottom: 20px;
+	font-weight: 600;
+
+	& h3{
+		font-weight: 600;
+		font-size: 2.7rem;
+		text-shadow: 1px 1.5px $preto2;
+	}
+
+	& small {
+		font-weight: lighter;
 	}
 }
 
