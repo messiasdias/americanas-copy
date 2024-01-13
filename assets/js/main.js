@@ -119,7 +119,8 @@ function rotate_start(element){
  //On Load full execute the main funtion
 function main(){
 	header_main();
-	slider_load("slider1");
+	slider_load("slider");
+	setTimeout(() => $('#search').val(""), 1000)
 }
 
 /* Jquery document onready */
@@ -128,13 +129,13 @@ $(document).ready( function(){
  /* Jquery document onscroll */	
  $(window).scroll(function(){
   	header_scroll();
-  	slider_resize("slider1");
+  	slider_resize("slider");
   });
 
  /* Jquery document resize */	
  $(window).resize(function(){
   	header_resize();
-  	slider_resize("slider1");
+  	slider_resize("slider");
   });
 
   /* Jquery Document Click*/
