@@ -77,11 +77,11 @@ function slider_set(name,item){
 
 function slider_run(name){
 
-  setInterval(function(){
-  	slider_diretions_center(name);
-  }, 100);	
+	setInterval(function(){
+		slider_diretions_center(name);
+	}, 100);	
 
-  setInterval(function(){
+	setInterval(function(){
    	slider_next(name);
     }, 15000);
 }
